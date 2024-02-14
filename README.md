@@ -1,4 +1,4 @@
-# CT-234---Estruturas-de-Dados-Analise-de-Algoritmos-e-Complexidade-Estrutural
+# CT-234-Estruturas-de-Dados-Analise-de-Algoritmos-e-Complexidade-Estrutural
 Estudos, códigos, conceitos e resumos da disciplina CT-234 ITA.
 
 ## Bibliografia da Disciplina
