@@ -6,16 +6,18 @@ Mas o que é o tempo de execução de um algoritmo? como é definido?
 
 <!-- Partindo do ponto que estamos trabalhando com processadores com a mesma arquitetura, além de desconsiderar ciclos de clock dos processadores, memória disponível, linguagem de programação... -->
 
-**Vejamos um exemplo simples para somar os elementos de um vetor**:
+**O programa abaixo, retorna o valor da soma de todos os n itens da lista**:
 
 ```
-vetor = [1, 2, 3, 4, 5]
-soma = 0
+def soma(lista):
+    resultadoSoma = 0
+    for elemento in lista:
+        resultadoSoma += elemento
+    return resultadoSoma
 
-for elemento in vetor:
-    soma += elemento
+soma([1,2,3,4,5])
 ```
-> Exemplo 01
+
 
 O tempo de execução de um algoritmo, é o tempo total que o processador leva para executar todas as instruções do algoritmo. Segundo TANENBAUM, A. S., & AUSTIN, T. (2013), o processador executa cada instrução em uma série de etapas, que podem ser condensadas em:
 
