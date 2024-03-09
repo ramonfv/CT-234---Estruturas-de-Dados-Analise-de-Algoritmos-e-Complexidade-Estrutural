@@ -46,12 +46,33 @@ int arrayMax (int input1[], int n)
     return currentMax;
 }
 ```
-    
+Ao analisarmos o número de operações primitivas realizadas no código, chegamos ao seguinte número de passos: 
+Vamos considerar que todas as operações levam o mesmo tempo para serem executadas, assim contando apenas o número de passos.
+
+```
+1 atribuição e 1 indexação (currentMax = input1[0])
+1 atribuição (i=1)
+repete n-1 vezes [1 teste (i<n), 1 indexação (input1[i]), 1 teste (>), 
+                  1 atribuição (currentMax = ...), 1 indexação (input1[i]), 1 incremento (i++)]
+1 teste (i<n)
+1 retorno
+
+```
+Simplificando número de operações, chegamos a função de eficiência do algoritmo analisado:
+```
+5 + (n-1)6 = 6n-1
+```
+Podemos então perceber como a função de eficiência cresce de acordo com o tamanho da entrada:
+
+
+![Função Linear](../cpp/linear.png)
+
+
     
     
 ----------------------------
 
-**Instância**: Uma instância pode ser compreendida  como sendo uma entrada única do problema a ser resolvido. Por exemplo, considere um algoritmo capaz de lidar com diferentes tipos de entradas, por exemplo, uma lista de letras e uma lista de imagens. Cada uma dessas entradas seria considera uma instância sepadada do problema
+**OBS: Instância**: Uma instância pode ser compreendida  como sendo uma entrada única do problema a ser resolvido. Por exemplo, considere um algoritmo capaz de lidar com diferentes tipos de entradas, por exemplo, uma lista de letras e uma lista de imagens. Cada uma dessas entradas seria considera uma instância sepadada do problema
     <!-- (não vamos nos preocupar com o tratamento de excessões no que diz respeito ) -->
  <!-- - www.comp.ita.br/~alonso/ensino.html -->
 
