@@ -107,9 +107,9 @@ Podemos então perceber como a função de eficiência cresce de acordo com o ta
     - Posso ter uma função que no infinito tenha semelhanças com outras, porém o caminha até lá que pode ser diferente
 - Representa a eficiência em termos de ordem de crescimento
 
-### Crescimento de funções
+### Crescimento de funções: Anpálise assintótica
 Análise:
-- Parte da contagem de operações e uma função de eficiência. Ou seja, para fazer a análise é preciso ter em mãos a função de eficiência do algoritmo
+- Parte da contagem de operações e uma função de eficiência. Ou seja, para fazer a análise é preciso ter em mãos a função de eficiência do algoritmo. Logo, calsula-se o número de operações primitivas executadas como função do tamanho da entrada e expressa-se esta função na notação O.
 - Caracteriza a complexidade como uma função do tamanho da entrada n
 - Um algoritmo assintoticamente mais eficiênte é a melhor escolha para as entradas a partir de um certo n. Ou seja, um algoritmo que seja mais próximo da função de eficiência a partir de um certo n.
 - Levar em consideração entradas válidas
@@ -141,11 +141,6 @@ Assim, podemos compreender que:
 - $f(n)$ é $O(g(n))$ se $f(n) <= c*g(n)$
 
 
-
-Conclusão:
-- Com $n > n_0$, valores de $f(n)$ esidem em $c*g(n)$ ou abaixo
-- $c*g(n)$ é limite superior para $f(n)$. Essa afirmação resume bem o que é a notação Big oh, um limite superior para o algoritmo.
-
 ##### Notação de igualdade para conjunto de funções O
 
 - A igualdade é utilizada no sentido de "representatividade" e pode ser lida como "É"
@@ -172,6 +167,118 @@ Para a equação de recorrência/eficiência  $f(n) = 3n^2 + n-2$, encontre o li
 
     
     ![Taxa de crescimento](../cpp/exemplo2.png)
+
+
+Conclusões:
+- Com $n > n_0$, valores de $f(n)$ esidem em $c*g(n)$ ou abaixo
+- $c*g(n)$ é limite superior para $f(n)$. Essa afirmação resume bem o que é a notação Big oh, um limite superior para o algoritmo.
+- A notação O fornece um **limite superior** para a taxa de crescimento de uma determinada função.
+- A afirmação $f(n)$ é $O(g(n))$ significa que a taxa de crescimento de $f(n)$ **não é maior** que a de $g(n)$.
+- A notação O permite ordenar as funções de acordo com as suas correspondentes taxas de crescimento.
+
+
+### Notação Omega: &Omega;
+
+Da mesma forma que a notação O nos fornece o limite assintótico superior para um determinado $f(n)$, a notação &Omega; nos dá o **limite assintótico inferior**. 
+
+Conceito:
+
+Para uma determinada função $g(n)$, denota-se $Ω(g(n))$ o conjunto de funções:
+
+$Ω(g(n)) = \{f(n): \text{existem constantes positivas } c \text{ e } n_0 \text{ tais que } 0 \leq cg(n) \leq f(n) \text{ para todo } n \geq n_0\}$.
+
+**Teorema**
+Para quaisquer duas funções $f(n) e g(n)$, temos $f(n) = Θ(g(n))$ se e somente se $f(n) = O(g(n))$ e $f(n) = Ω(g(n))$.
+
+Na prática, temos que:
+- Na notação &Omega;, convém utilizar a **maior** função possível. 
+Por exemplo:
+É correto afirmar que $f(n) = 3n^2 + 10$ é $Ω(g(n))$, mas representa pouca coisa sobre $f(n)$.
+É análogo a dizer que $f(n) = n^3$ é $O(n^5)$. Não deixa de ser verdade, mas é um limite que não está assintoticamente ajustado.
+
+
+
+### Notação theta: Θ
+
+Como enunciado nas seções anteiores, a função $f(n)$ é limitada por um conjuntos de funções. Até o momento, estudamos o conjunto de funções que limitam supeiormente e inferioemente $f(n)$. Agora, desejamos encontrar um conjunto de funções que limite  $f(n)$ superiormente e inferiormente, esse limite é denominado **limite assintoticamente restrito**. Logo, a função $f(n)$ encontrada pertence simultâneamente $O(g(n))$ e a $Ω(g(n))$.
+
+Conceito:
+Para uma dada função $g(n)$, denotamos por $Θ(g(n))$ o conjunto de funções:  
+
+$Θ(g(n)) = \{f(n): \text{existem constantes positivas } c_1, c_2 \text{ e } n_0 \text{ tais que } 0 \leq c_1 \cdot g(n) \leq c_2 \cdot g(n) \text{ para todo } n \geq n_0\}$.
+
+Assim, um afunção $f(n)$ pertence ao conjunto $Θ(g(n))$ se existem constantes $c_1$ e $c_2$ tais que ela possa ser "encaixada" entre $c_1 \cdot g(n)$ e $c_2 \cdot g(n)$, para um valor de $n$ suficientemente grande.
+
+- Logo, para todo $n > n_0$, $f(n)$ reside em $c_1 \cdot g(n)$ ou acima dele e em $c_2 \cdot g(n)$ ou abaixo desse.
+
+- Basicamente, podemos dizer que $f(n)$ é $Θ(g(n))$ se e somente se:
+$lim_{n → ∞} \frac{f(n)}{g(n)} = c$, onde $c > 0$
+
+
+
+
+---------------------
+### Notação o e &omega;: Limite estritamente supeior ou inferior
+
+- Muito parecidas com as notações O e &Omega;, respectivamente. No entanto, possui uma relação do tipo menor e maior. São utilizadas para definir limites que não são assintoticamente justos.
+- Não representam limites próximos, mas apenas estritamente supriores e inferiores.
+
+**Conceito o**:
+
+Para uma dada função $g(n)$, denotamos por $o(g(n))$ o conjunto de funções:  
+
+$o(g(n)) = \{f(n): \text{ para qualquer constante positiva } c \gt 0,  \text{ existe uma constante }  n_0 \gt 0 \text{ tal que } 0 \leq f(n) \lt cg(n) \text{ para todo } n \geq n_0 \}$.
+
+Por exemplo:
+$2n = o(n^2)$, mas $2n^2 \neq o(n^2)$
+- $n$ é sempre menor do que $n^2$ par aum n suficientemente grande
+- Já $n^2$, não é sempre menor do que $n^2$. *Ignorando as consntante de ambos os casos.
+- Na notação o, a função $f(n)$ torna-se insignificante em relação a
+$g(n)$ à medida que $n$ se aproxima do infinito; isto é: $lim_{n \to ∞} \frac{f(n)}{g(n)} = 0$
+
+**Conceito &omega;**:
+
+Para uma dada função $g(n)$, denotamos por $\omega(g(n))$ o conjunto de funções:  
+
+$\omega(g(n)) = \{f(n) : \text{para qualquer } c > 0 \text{ e } n_0 > 0 \text{ tais que } 0 \leq cg(n) < f(n) \text{ para todo } n \geq n_0\}$.
+
+Por exemplo:
+$\frac{n^2}{2} = \omega(n)$, mas $\frac{n^2}{2} \neq \omega(n^2)$
+- $\frac{n^2}{2} = \omega(n)$: Isso significa que a função $\frac{n^2}{2}$ cresce mais rapidamente do que $n$ quando $n$ tende ao infinito. Para verificar isso, podemos observar o limite do quociente entre as duas funções: 
+$lim_{n \to ∞} \frac{\frac{n^2}{2}}{n} = ∞$
+
+Como o limite é infinito, isso confirma que $\frac{n^2}{2}$ cresce mais rapidamente do que $n$, o que implica que $\frac{n^2}{2} = \omega(n)$.
+
+- $\frac{n^2}{2} \neq \omega(n^2)$: Isso significa que a função $\frac{n^2}{2}$ não cresce mais rapidamente do que $n^2$ quando $n$ tende ao infinito. Novamente, podemos observar o limite do quociente entre as duas funções:
+
+$lim_{n \to ∞} \frac{\frac{n^2}{2}}{n^2} = lim_{n \to ∞} \frac{1}{2} = \frac{1}{2}$
+
+Como o limite é finito e não infinito, isso indica que $\frac{n^2}{2}$ não cresce mais rapidamente do que $n^2$ quando $n$ tende ao infinito. Portanto, $\frac{n^2}{2} \neq \omega(n^2)$.
+
+
+Logo, se:
+- Se $lim_{n \to ∞} \frac{f(n)}{g(n)} = 1$, dizemos que $f(n) \sim g(n)$.
+- Se $lim_{n \to ∞} \frac{f(n)}{g(n)} = 0$, dizemos que $f(n)$ é $o(g(n))$.
+- Se $lim_{n \to ∞} \frac{f(n)}{g(n)} = ∞$, dizemos que $f(n)$ é $\omega(g(n))$.
+
+-------------------
+É possível fazer uma analogia entre a comparação assintótica de duas funções f e g e a comparação de dois números reais a e b:
+
+
+- $f(n) = O(g(n)) \sim a \leq b$.
+
+- $f(n) = \Omega(g(n)) \sim a \geq b$.
+
+- $f(n) = \Theta(g(n)) \sim a = b$.
+
+- $f(n) = o(g(n)) \sim a \lt b$.
+
+- $f(n) = \omega(g(n)) \sim a \gt b$.
+
+
+
+Obs: ler o final do cap 3.1 do Cormen para fixar a "tabela" e faça os exercícios.
+
 
 
 
