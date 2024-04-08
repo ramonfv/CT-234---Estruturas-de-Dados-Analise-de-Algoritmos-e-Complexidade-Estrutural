@@ -107,7 +107,7 @@ Podemos então perceber como a função de eficiência cresce de acordo com o ta
     - Posso ter uma função que no infinito tenha semelhanças com outras, porém o caminha até lá que pode ser diferente
 - Representa a eficiência em termos de ordem de crescimento
 
-### Crescimento de funções: Anpálise assintótica
+### Crescimento de funções: Análise assintótica
 Análise:
 - Parte da contagem de operações e uma função de eficiência. Ou seja, para fazer a análise é preciso ter em mãos a função de eficiência do algoritmo. Logo, calsula-se o número de operações primitivas executadas como função do tamanho da entrada e expressa-se esta função na notação O.
 - Caracteriza a complexidade como uma função do tamanho da entrada n
@@ -297,4 +297,20 @@ Obs: ler o final do cap 3.1 do Cormen para fixar a "tabela" e faça os exercíci
  - Simulação de algoritmos
 
 
+A função $6n^3 + 12n^2 + 12\log n + 3$ não pertence a $o(n^3)$.
 
+A notação $o$ é usada para descrever um limite superior estrito. Quando dizemos que uma função f(n) é $o(g(n))$, estamos dizendo que o crescimento de f(n) é estritamente mais lento do que o crescimento de g(n) para valores grandes de n.
+
+Neste caso, o termo dominante da função é $6n^3$, que cresce exatamente na mesma taxa que $n^3$ para valores grandes de n. Portanto, a função não é $o(n^3)$, mas sim $\Theta(n^3)$.
+
+Para provar isso formalmente, precisamos mostrar que para qualquer constante c, existe um valor de n (chamado n0) tal que $6n^3 + 12n^2 + 12\log n + 3 \geq c * n^3$ para todo $n > n0$.
+
+A notação $o(g(n))$ significa que o crescimento de f(n) é estritamente menor que o crescimento de g(n) para valores grandes de n.
+
+Para provar que $6n^3 + 12n^2 + 12\log n + 3$ não é $o(n^3)$, precisamos mostrar que não existe uma constante c e um valor de n (chamado n0) tal que $6n^3 + 12n^2 + 12\log n + 3 < c * n^3$ para todo $n > n0$.
+
+Se tomarmos c = 6, podemos ver que para todo $n \geq 1$, temos:
+
+$6n^3 + 12n^2 + 12\log n + 3 \geq 6n^3$
+
+Portanto, a função $6n^3 + 12n^2 + 12\log n + 3$ não é $o(n^3)$, porque não cresce estritamente mais lento do que $n^3$ para valores grandes de n. Na verdade, ela cresce na mesma taxa que $n^3$ para valores grandes de n, então ela é $\Theta(n^3)$.
