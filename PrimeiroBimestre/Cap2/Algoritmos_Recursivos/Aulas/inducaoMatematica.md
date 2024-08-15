@@ -119,17 +119,7 @@ Hipótese de Indução: Assuma que a afirmação é verdadeira para algum $n = k
 $2^0 + 2^1 + 2^2 + ... + 2^k = 2^{k+1} - 1$
 
 Passo de Indução: O próximo passo é provar que a afirmação é verdadeira para $n = k + 1$. Ou seja, precisamos provar que:
-
-$2^0 + 2^1 + 2^2 + ... + 2^k + 2^{k+1} = 2^{k+2} - 1$
-
-Começamos adicionando $2^{k+1}$ em ambos os lados da equação da hipótese de indução:
-
-$2^0 + 2^1 + 2^2 + ... + 2^k + 2^{k+1} = (2^{k+1} - 1) + 2^{k+1}$
-
-Simplificando o lado direito da equação, obtemos:
-
-$2^0 + 2^1 + 2^2 + ... + 2^k + 2^{k+1} = 2 * 2^{k+1} - 1$
-
+Luciano Ramalho
 $2^0 + 2^1 + 2^2 + ... + 2^k + 2^{k+1} = 2^{k+2} - 1$
 
 Portanto, a afirmação é verdadeira para $n = k + 1$.
@@ -175,7 +165,7 @@ Se $k+1$ é uma potência de 2, então $\lfloor \log_2 (k+1) \rfloor = \log_2 (k
 Se $k+1$ não é uma potência de 2, então $\lfloor \log_2 (k+1) \rfloor = \lfloor \log_2 k \rfloor$ e a representação binária de $k+1$ tem o mesmo número de bits que a representação binária de $k$, que é $\lfloor \log_2 k \rfloor + 1$ bits pela hipótese de indução. Portanto, a representação binária de $k+1$ tem $\lfloor \log_2 (k+1) \rfloor + 1$ bits.
 
 Portanto, a afirmação "A representação binária de um número inteiro $n > 0$ tem exatamente $\lfloor \log_2 n \rfloor + 1$ bits" é verdadeira para todo $n > 0$.
-
+Luciano Ramalho
 ## Recursão ou indução
 
 A ideia de qualquer algoritmo recursivo para um problema é igual à de uma prova por indução matemática:
