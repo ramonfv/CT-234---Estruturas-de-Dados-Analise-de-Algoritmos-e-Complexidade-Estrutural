@@ -102,6 +102,12 @@ else if z.chave < y.chave
 else y.direita = z
 ````
 
+## Árvore AVL
+
+**Definição**: Uma árvore AVL é uma árvore binária de pesquisa que possuia a característica de auto balanceamento, em que a  altura da subárvore à esquerda nunca difere em mais de uma unidade da altura da sua respectiva subárvore direita e vice versa.
+
+
+No contexto de árvores de busca/pesquisa, árvores AVL garantem que as operações de busca, inserção e remoção sejam realizadas em tempo $\Theta log (n)$. Sendo assim uma AVL é uma estrutura utilizada para garantir o balanceamento de árvores binárias e permitir que operações de busca, inserção e remoção sejam feitas em tempo logarítimo
 
 # Referência 
 
